@@ -11,8 +11,9 @@ const app = express()
 const PORT = "5000"
 connectdB()
 app.use(cors({
-    origin: ["https://grabpizza.vercel.app/"]}
-))
+      origin: "*",
+  methods: ["GET", "POST", "PUT", "DELETE"],
+}))
 app.use(express.json())
 
 app.use("/api", Categoryroutes)
